@@ -4,6 +4,8 @@ app.controller('MeuController', function($rootScope, $scope, $window) {
     $scope.online = navigator.onLine;
     $scope.pessoa = {};
     $scope.pessoas = [];
+    $scope.filtro = '';
+    $scope.ordem = '';
 
     $scope.adicionar = function() {
         $scope.pessoas.push($scope.pessoa);
@@ -13,6 +15,10 @@ app.controller('MeuController', function($rootScope, $scope, $window) {
 
     $scope.remover = function(i) {
         $scope.pessoas.splice(i, 1);
+    };
+
+    $scope.ordenaPor = function(ordem) {
+        $scope.ordem = ordem;
     };
 
     function carregarPessoas() {
